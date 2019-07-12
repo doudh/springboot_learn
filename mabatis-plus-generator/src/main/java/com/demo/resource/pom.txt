@@ -1,0 +1,67 @@
+<parent>
+    <artifactId>internet_hospita</artifactId>
+    <groupId>com.senyint</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+</parent>
+
+<properties>
+    <mybatis-plus-boot-starter.version>3.1.0</mybatis-plus-boot-starter.version>
+    <mysql.version>8.0.15</mysql.version>
+    <lombok.version>1.18.6</lombok.version>
+    <druid.version>1.1.16</druid.version>
+</properties>
+
+<dependencies>
+    <dependency>
+        <groupId>com.senyint</groupId>
+        <artifactId>common</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatis-plus-boot-starter.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.version}</version>
+    </dependency>
+    <!-- lombok -->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+        <scope>compile</scope>
+    </dependency>
+    <!-- alibaba druid -->
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-starter</artifactId>
+        <version>${druid.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+        <version>${swagger.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-bean-validators</artifactId>
+        <version>${swagger.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger-ui</artifactId>
+        <version>${swagger.version}</version>
+    </dependency>
+</dependencies>

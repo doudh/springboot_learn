@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.HelloMapper">
+
+    <select id="selectList" resultType="com.demo.entity.HelloDto">
+        select a.* from A a,B b where a.id = b.aId
+        <if test="hello.name != null">
+            AND a.name like %#{hello.name}%
+        </if>
+    </select>
+
+</mapper>

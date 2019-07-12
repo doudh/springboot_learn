@@ -1,0 +1,6 @@
+server:
+  port: 8082
+jwt:
+  expire: 1800     #秒
+  key: doudh
+

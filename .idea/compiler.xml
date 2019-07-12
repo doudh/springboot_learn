@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jwt-base" />
+        <module name="mabatis-plus-generator" />
+        <module name="mybatis-plus-base" />
+        <module name="mybatis-plus-threedb" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jwt-base" target="1.8" />
+      <module name="jwt-shiro" target="1.8" />
+      <module name="mabatis-plus-generator" target="1.8" />
+      <module name="mybatis-plus-base" target="1.8" />
+      <module name="mybatis-plus-threedb" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

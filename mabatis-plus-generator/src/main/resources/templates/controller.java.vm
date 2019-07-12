@@ -1,0 +1,85 @@
+package ${package.Controller};
+
+
+import org.springframework.web.bind.annotation.*;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.doudh.common.utils.Result;
+import com.doudh.common.utils.IdWorker;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+#if(${swagger2})
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+#end
+
+import ${package.Service}.${table.serviceName};
+import ${package.Entity}.${entity};
+
+#if(${superControllerClassPackage})
+import ${superControllerClassPackage};
+#end
+
+/**
+ * @desc $!{table.comment} 前端控制器
+ * @author ${author}
+ * @time ${date}
+ */
+#if(${swagger2})
+@Api(value="${table.controllerName}",tags={"$!{table.comment}接口"})
+#end
+#if(${restControllerStyle})
+@RestController
+#else
+@Controller
+#end
+@RequestMapping("/#if(!${controllerMappingHyphenStyle})${table.entityPath}#end")
+#if(${superControllerClass})
+public class ${table.controllerName} extends ${superControllerClass} {
+#else
+public class ${table.controllerName} {
+#end
+
+    private final Logger logger = LoggerFactory.getLogger(${table.controllerName}.class);
+    @Autowired
+    private ${table.serviceName} ${table.entityPath}Service;
+
+#if(${swagger2})
+    @ApiOperation(value="分页信息")
+#end
+    @RequestMapping(value = "/search",method = RequestMethod.POST)
+    public Result page(Page<${entity}> page,@RequestBody ${entity} entity) {
+        QueryWrapper<${entity}> wrapper = new QueryWrapper<>();
+        //wrapper.orderByDesc("create_date");
+        ${table.entityPath}Service.page(page,wrapper);
+        return Result.ok().put("page",page);
+    }
+#if(${swagger2})
+    @ApiOperation(value="新增")
+#end
+    @RequestMapping(method = RequestMethod.POST)
+    public Result save(@RequestBody ${entity} entity){
+        entity.setId(new IdWorker(1).nextId());
+        ${table.entityPath}Service.save(entity);
+        return Result.ok();
+    }
+#if(${swagger2})
+    @ApiOperation(value="修改")
+#end
+    @RequestMapping(method = RequestMethod.PUT)
+    public Result update(@RequestBody ${entity} entity){
+        ${table.entityPath}Service.updateById(entity);
+        return Result.ok();
+    }
+#if(${swagger2})
+    @ApiOperation(value="删除")
+#end
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public Result delete(@PathVariable String id){
+        ${table.entityPath}Service.removeById(id);
+        return Result.ok();
+    }
+
+}
+

@@ -1,0 +1,45 @@
+server:
+  port: 80
+spring:
+  application:
+    name: hospital-service
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: root
+      url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      type: com.alibaba.druid.pool.DruidDataSource   #这里是配置druid连接池，以下都是druid的配置信息
+      druid:
+        max-open-prepared-statements: 20
+        pool-prepared-statements: true
+        test-on-return: false
+        test-on-borrow: false
+        test-while-idle: true
+        validation-query: select 'x'
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 300000
+        min-idle: 1
+        max-wait: 6000
+        initial-size: 1
+        max-active: 20
+        connection-properties: druid.stat.merggSql=ture;druid.stat.slowSqlMillis=500
+        filters: stat,wall
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml #把xml文件放在com.XX.mapper.*中可能会出现找到的问题，这里把他放在resource下的mapper中
+  type-aliases-package:  com.senyint.model.entity #这里是实体类的位置 com.senyint.model.entity
+  global-config:
+    sql-parser-cache: true
+    db-config:
+      id-type: INPUT  #用户自定义id
+      field-strategy: not_null #非 NULL 判断
+      table-underline: true #驼峰下划线转换
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    useActualParamName : false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #sql打印
+  configuration-properties:
+    dbType: mysql  #设置全局属性用于控制数据库的类型
+

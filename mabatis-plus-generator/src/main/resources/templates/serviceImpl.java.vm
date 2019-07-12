@@ -1,0 +1,79 @@
+package ${package.ServiceImpl};
+
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.doudh.common.annotation.DataSource;
+import com.doudh.common.enums.DataSourceEnum;
+import ${package.Entity}.${entity};
+import ${package.Mapper}.${table.mapperName};
+import ${package.Service}.${table.serviceName};
+import ${superServiceImplClassPackage};
+import org.springframework.stereotype.Service;
+
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @desc $!{table.comment} 服务实现类
+ * @author ${author}
+ * @time ${date}
+ */
+@Service
+public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
+
+    @Override
+    @DataSource(DataSourceEnum.DB2)
+    public ${entity} getById(Serializable id) {
+        return super.getById(id);
+    }
+
+    @Override
+    @DataSource(DataSourceEnum.DB2)
+    public Collection<${entity}> listByMap(Map<String, Object> columnMap) {
+        return super.listByMap(columnMap);
+    }
+
+    @Override
+    @DataSource(DataSourceEnum.DB2)
+    public ${entity} getOne(Wrapper<${entity}> queryWrapper, boolean throwEx) {
+        return super.getOne(queryWrapper,throwEx);
+    }
+    @Override
+    @DataSource(DataSourceEnum.DB2)
+    public Map<String, Object> getMap(Wrapper<${entity}> queryWrapper) {
+        return super.getMap(queryWrapper);
+    }
+
+    @Override
+    @DataSource(DataSourceEnum.DB2)
+    public int count(Wrapper<${entity}> queryWrapper) {
+        return super.count(queryWrapper);
+    }
+
+    @Override
+    @DataSource(DataSourceEnum.DB2)
+    public List<${entity}> list(Wrapper<${entity}> queryWrapper) {
+        return super.list(queryWrapper);
+    }
+
+    @Override
+    @DataSource(DataSourceEnum.DB2)
+    public IPage<${entity}> page(IPage<${entity}> page, Wrapper<${entity}> queryWrapper) {
+        return super.page(page,queryWrapper);
+    }
+
+    @Override
+    @DataSource(DataSourceEnum.DB2)
+    public List<Map<String, Object>> listMaps(Wrapper<${entity}> queryWrapper) {
+        return super.listMaps(queryWrapper);
+    }
+    
+    @Override
+    @DataSource(DataSourceEnum.DB2)
+    public IPage<Map<String, Object>> pageMaps(IPage<${entity}> page, Wrapper<${entity}> queryWrapper) {
+        return super.pageMaps(page,queryWrapper);
+    }
+}
+
