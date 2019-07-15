@@ -24,6 +24,9 @@ spring:
         max-active: 20
         connection-properties: druid.stat.merggSql=ture;druid.stat.slowSqlMillis=500
         filters: stat,wall
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
 
 #mybatis
 mybatis-plus:

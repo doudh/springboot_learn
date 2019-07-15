@@ -16,12 +16,15 @@ import java.util.List;
 
 
 public class CodeGenerator {
-    public static String[] tables = new String[] { "medical_record","logistics_order"};    //表名  数组
+    public static String[] tables = new String[] { "user"};    //表名  数组
     public static String author = "doudh";       //作者
     public static String driver = "com.mysql.cj.jdbc.Driver";
-    public static String url = "jdbc:mysql://192.168.20.131:3306/ihospital_gznk?serverTimezone=UTC";
-    public static String username = "IMUSER";
-    public static String password = "IMUSER123";
+    public static String url = "jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC";
+    public static String username = "root";
+    public static String password = "root";
+//    public static String url = "jdbc:mysql://192.168.20.131:3306/ihospital_gznk?serverTimezone=UTC";
+//    public static String username = "IMUSER";
+//    public static String password = "IMUSER123";
 
     public static void main(String[] args) {
         generatorMethod();
@@ -86,7 +89,7 @@ public class CodeGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.senyint");
+        pc.setParent("com.doudh");
         pc.setController( "controller");
         pc.setEntity( "model.entity" );
         //pc.setModuleName("test");

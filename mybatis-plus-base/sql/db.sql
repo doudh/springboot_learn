@@ -1,16 +1,7 @@
-CREATE TABLE `t_student` (
-  `id` int(100) NOT NULL DEFAULT '0',
-  `name` varchar(110) DEFAULT NULL,
-  `age` int(100) DEFAULT NULL,
-  `classname` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-CREATE TABLE `t_teacher` (
-  `id` int(100) NOT NULL DEFAULT '0',
-  `name` varchar(100) DEFAULT NULL,
-  `age` int(20) DEFAULT NULL,
-  `subject` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `user` (
+  `id` bigint(45) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;

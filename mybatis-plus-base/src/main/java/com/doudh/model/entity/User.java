@@ -1,6 +1,7 @@
 package com.doudh.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -12,14 +13,14 @@ import java.util.Date;
 /**
  * @desc 
  * @author doudh
- * @time 2019-07-11
+ * @time 2019-07-15
  */
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("t_teacher")
-@ApiModel(value="TTeacher对象", description="")
-public class TTeacher implements Serializable {
+@TableName("user")
+@ApiModel(value="User对象", description="")
+public class User implements Serializable {
 
 
     private static final long serialVersionUID = 1L;
@@ -27,10 +28,10 @@ public class TTeacher implements Serializable {
     @TableId("id")
     private long id;
 
-    private String name;
+    private String username;
 
-    private Integer age;
+    private String password;
 
-    private String subject;
+    private Date createTime;
 
 }

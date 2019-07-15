@@ -1,4 +1,4 @@
-package com.demo.resource;
+package com.doudh.config;
 
 import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +11,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * swagger文档
+ * 
  * @author
+ *
  */
 @Configuration
 @EnableSwagger2
@@ -28,5 +30,5 @@ public class SwaggerConfig {
 				.build();
 	}
 
-	// http://127.0.0.1:80/swagger-ui.html
+	// http://ip:端口/swagger-ui.html
 }

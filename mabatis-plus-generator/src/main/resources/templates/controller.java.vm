@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.doudh.common.utils.Result;
-import com.doudh.common.utils.IdWorker;
+import com.doudh.utils.Result;
+import com.doudh.utils.IdWorker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 #if(${swagger2})
